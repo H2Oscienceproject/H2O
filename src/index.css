@@ -20,16 +20,13 @@ ol, ul {
 .square {
   background: #fff;
   border: 1px solid #999;
-  float: left;
   font-size: 24px;
   font-weight: bold;
   line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
+  height: 64px;
   padding: 0;
   text-align: center;
-  width: 34px;
+  width: 64px;
 }
 
 .square:focus {
@@ -43,6 +40,7 @@ ol, ul {
 .game {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .game-info {
@@ -60,7 +58,32 @@ p.author {
   background: black;
 }
 .infobar {
-  position: absolute;
-  width:100%;
   background: pink;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.infobar button {
+  width:70px;
+  height:70px;
+  padding:0px;
+  margin:5px;
+}
+.board-row button {
+  width:70px;
+  height:70px;
+  padding:0px;
+  border:0;
+  margin: 5px;
+}
+.square img {
+  border:1px pink solid;
+  display: inline-block;
+  width: 68px;
+  height:68px;
+}
+.mix {
+  font: 3em bold;
+  color:white;
 }
