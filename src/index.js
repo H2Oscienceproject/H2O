@@ -142,7 +142,7 @@ class Atom extends React.Component {
       } else if (hs===2 && os===2) {
         setResult(success(hs,os),"H2O2","Dioxidane","https://en.wikipedia.org/wiki/Dioxidane");
       } else {
-        setResult(<code>Failed! You didn't make any molecule!</code>)
+        setResult(<code>Failed! Better luck next time!</code>)
       }
     }
     render() {
