@@ -80,9 +80,17 @@ class Atom extends React.Component {
 
   class Result extends React.Component {
     render() {
-      return (
-        <label>{this.props.value}</label>
-      )
+      var r = [        
+        <label>{this.props.value.result}</label>        
+      ];
+      let hs = this.props.value.hs;
+      let os = this.props.value.os;
+      r.push(<p>{this.props.value.name}</p>);
+      if (this.props.value.molecule==="H2O"){
+        r.push(<br/>);
+        r.push(<img src="waterdorp.png" alt={this.props.value.name}/>)
+      }
+      return r;
     }
   }
   
@@ -92,7 +100,8 @@ class Atom extends React.Component {
       this.state = {
         hs: 0,
         os: 0,
-        result: ""
+        result: "",
+        molecule: ""
       }
     }
     increase(that,horo) {
@@ -107,7 +116,7 @@ class Atom extends React.Component {
       }
     }
     check(that) {
-      var subrender = (hc, oc) => {
+      var success = (hc, oc) => {
         var r = [];
         if(hc>0) r.push("H");
         if(hc>1) r.push(<sub>{hc}</sub>);        
@@ -115,22 +124,22 @@ class Atom extends React.Component {
         if(oc>1) r.push(<sub>{oc}</sub>);
         return <code>Well done! You get a {r} molecule!</code>;
       }
-      var setResult = (result) => {
+      var setResult = (result,molecule,name) => {
         console.log(result);
-        that.setState({hs:0, os:0, result:result});
+        that.setState({hs:0, os:0, result:result, molecule:molecule,name:name});
       }
       let hs = that.state.hs;
       let os = that.state.os;
       if (hs===2 && os===0){
-        setResult(subrender(hs,os));
+        setResult(success(hs,os),"H2","Hydrogen gas");
       } else if (hs===0 && os===2) {
-        setResult(subrender(hs,os));
+        setResult(success(hs,os),"O2","Oxygen gas");
       } else if (hs===0 && os===3) {
-        setResult(subrender(hs,os));
+        setResult(success(hs,os),"O3","Ozone gas");
       } else if (hs===2 && os===1) {
-        setResult(subrender(hs,os));
+        setResult(success(hs,os),"H2O","Water");
       } else if (hs===2 && os===2) {
-        setResult(subrender(hs,os));
+        setResult(success(hs,os),"H2O2","Dioxidane");
       } else {
         setResult(<code>Failed! You didn't make any molecule!</code>)
       }
@@ -145,7 +154,7 @@ class Atom extends React.Component {
             <Board value={this.state.hs} type="h" />
           </div>
           <div className="mix">
-            <Result value={this.state.result}/>
+            <Result value={this.state}/>
           </div>
           <div className="game-board">
             <Board value={this.state.os} type="o" />
