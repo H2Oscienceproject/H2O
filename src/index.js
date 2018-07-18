@@ -67,11 +67,11 @@ class Atom extends React.Component {
     render(){
       return (
         <div className="infobar">
-          <button title="Add Hydrogen" 
+          <button title="Add Hydrogen Atom" 
                   onClick={() => this.add(true)}><img src="h.svg" alt="h"/></button>
-          <button title="Check what you can get"
+          <button title="Check what molecule you can get"
                   onClick={() => this.check()}><img src="tick.svg" alt="tick"/></button>
-          <button title="Add Oxygen"
+          <button title="Add Oxygen Atom"
                   onClick={() => this.add(false)}><img src="o.svg" alt="o"/></button>
         </div>
       );
@@ -85,7 +85,8 @@ class Atom extends React.Component {
       ];
       let hs = this.props.value.hs;
       let os = this.props.value.os;
-      r.push(<p>{this.props.value.name}</p>);
+      r.push(<br/>);
+      r.push(<a href={this.props.value.url}>{this.props.value.name}</a>);
       if (this.props.value.molecule==="H2O"){
         r.push(<br/>);
         r.push(<img src="waterdorp.png" alt={this.props.value.name}/>)
@@ -124,22 +125,22 @@ class Atom extends React.Component {
         if(oc>1) r.push(<sub>{oc}</sub>);
         return <code>Well done! You get a {r} molecule!</code>;
       }
-      var setResult = (result,molecule,name) => {
+      var setResult = (result,molecule,name,url) => {
         console.log(result);
-        that.setState({hs:0, os:0, result:result, molecule:molecule,name:name});
+        that.setState({hs:0, os:0, result:result, molecule:molecule,name:name,url:url});
       }
       let hs = that.state.hs;
       let os = that.state.os;
       if (hs===2 && os===0){
-        setResult(success(hs,os),"H2","Hydrogen gas");
+        setResult(success(hs,os),"H2","Hydrogen gas","https://en.wikipedia.org/wiki/Hydrogen_gas");
       } else if (hs===0 && os===2) {
-        setResult(success(hs,os),"O2","Oxygen gas");
+        setResult(success(hs,os),"O2","Oxygen gas","https://en.wikipedia.org/wiki/Oxygen_gas");
       } else if (hs===0 && os===3) {
-        setResult(success(hs,os),"O3","Ozone gas");
+        setResult(success(hs,os),"O3","Ozone","https://en.wikipedia.org/wiki/Ozone");
       } else if (hs===2 && os===1) {
-        setResult(success(hs,os),"H2O","Water");
+        setResult(success(hs,os),"H2O","Water","https://en.wikipedia.org/wiki/Water");
       } else if (hs===2 && os===2) {
-        setResult(success(hs,os),"H2O2","Dioxidane");
+        setResult(success(hs,os),"H2O2","Dioxidane","https://en.wikipedia.org/wiki/Dioxidane");
       } else {
         setResult(<code>Failed! You didn't make any molecule!</code>)
       }

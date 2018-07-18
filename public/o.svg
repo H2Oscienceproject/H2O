@@ -1,24 +1,65 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-    <g>
-        <circle fill="red" r="2" cx="45.5" cy="45.5"/>
-        <circle fill="grey" r="2" cx="48.5" cy="45.5"/>
-        <circle fill="red" r="2" cx="51.5" cy="45.5"/>
-        <circle fill="grey" r="2" cx="54.5" cy="45.5"/>
-        
-        <circle fill="grey" r="2" cx="45.5" cy="48.5"/>
-        <circle fill="red" r="2" cx="48.5" cy="48.5"/>
-        <circle fill="grey" r="2" cx="51.5" cy="48.5"/>
-        <circle fill="red" r="2" cx="54.5" cy="48.5"/>
-        
-        <circle fill="red" r="2" cx="45.5" cy="51.5"/>
-        <circle fill="grey" r="2" cx="48.5" cy="51.5"/>
-        <circle fill="red" r="2" cx="51.5" cy="51.5"/>
-        <circle fill="grey" r="2" cx="54.5" cy="51.5"/>
-        
-        <circle fill="grey" r="2" cx="45.5" cy="54.5"/>
-        <circle fill="red" r="2" cx="48.5" cy="54.5"/>
-        <circle fill="grey" r="2" cx="51.5" cy="54.5"/>
-        <circle fill="red" r="2" cx="54.5" cy="54.5"/>
+    <g>        
+        <circle style="fill:red;" r="1.2" cx="47" cy="47"/>
+        <circle style="fill:grey;" transform="translate(50,50)
+                      rotate(30,0,0)
+                      translate(-50,-50)"
+            r="1.2" cx="47" cy="47">
+        </circle>
+        <circle style="fill:red;" transform="translate(50,50)
+                      rotate(60,0,0)
+                      translate(-50,-50)"
+             r="1.2" cx="47" cy="47">
+        </circle>
+        <circle style="fill:grey;" transform="translate(50,50)
+                      rotate(90,0,0)
+                      translate(-50,-50)"
+             r="1.2" cx="47" cy="47">
+        </circle>
+        <circle style="fill:red;" transform="translate(50,50)
+                      rotate(120,0,0)
+                      translate(-50,-50)"
+            r="1.2" cx="47" cy="47">
+        </circle>
+        <circle style="fill:grey;" transform="translate(50,50)
+                      rotate(150,0,0)
+                      translate(-50,-50)"
+             r="1.2" cx="47" cy="47">
+        </circle>
+        <circle style="fill:red;" transform="translate(50,50)
+                      rotate(180,0,0)
+                      translate(-50,-50)"
+             r="1.2" cx="47" cy="47">
+        </circle>
+        <circle style="fill:grey;" transform="translate(50,50)
+                      rotate(-150,0,0)
+                      translate(-50,-50)"
+             r="1.2" cx="47" cy="47">
+        </circle>
+        <circle style="fill:red;" transform="translate(50,50)
+                      rotate(-120,0,0)
+                      translate(-50,-50)"
+             r="1.2" cx="47" cy="47">
+        </circle>
+        <circle style="fill:grey;" transform="translate(50,50)
+                      rotate(-90,0,0)
+                      translate(-50,-50)"
+             r="1.2" cx="47" cy="47">
+        </circle>
+        <circle style="fill:red;" transform="translate(50,50)
+                      rotate(-60,0,0)
+                      translate(-50,-50)"
+             r="1.2" cx="47" cy="47">
+        </circle>
+        <circle style="fill:grey;" transform="translate(50,50)
+                      rotate(-30,0,0)
+                      translate(-50,-50)"
+             r="1.2" cx="47" cy="47">
+        </circle>
+        <circle style="fill:grey;" r="1.2" cx="48.7" cy="48.7"/>
+        <circle style="fill:red;" r="1.2" cx="51.3" cy="48.7"/>
+        <circle style="fill:red;" r="1.2" cx="48.7" cy="51.3"/>
+        <circle style="fill:grey;" r="1.2" cx="51.3" cy="51.3"/>
 
         <circle 
             style="stroke:violet; stroke-width:0.5; fill:transparent;"
@@ -29,6 +70,8 @@
         <ellipse cx="50" cy="50" 
             style="fill:transparent; stroke:purple; stroke-width:0.5"
             rx="10" ry="40"/>
+        <circle fill="blue" r="1" cx="75" cy="28.7"/>
+        <circle fill="blue" r="1" cx="25" cy="71.3"/>
 
         <g transform="translate(50,50)
                       rotate(60 0 0)
@@ -36,6 +79,8 @@
         <ellipse cx="50" cy="50" 
             style="fill:transparent; stroke:purple; stroke-width:0.5"
             rx="10" ry="40"/>
+        <circle fill="blue" r="1" cx="75" cy="28.7"/>
+        <circle fill="blue" r="1" cx="25" cy="71.3"/>
         </g>
 
         <g transform="translate(50,50)
@@ -44,6 +89,8 @@
         <ellipse cx="50" cy="50" 
             style="fill:transparent; stroke:purple; stroke-width:0.5"
             rx="10" ry="40"/>
+        <circle fill="blue" r="1" cx="75" cy="28.7"/>
+        <circle fill="blue" r="1" cx="25" cy="71.3"/>
         </g>
     </g>
 </svg>
