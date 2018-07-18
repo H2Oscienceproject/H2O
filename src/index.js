@@ -87,10 +87,9 @@ class Atom extends React.Component {
       let os = this.props.value.os;
       r.push(<br/>);
       r.push(<a href={this.props.value.url}>{this.props.value.name}</a>);
-      if (this.props.value.molecule==="H2O"){
-        r.push(<br/>);
-        r.push(<img src="waterdorp.png" alt={this.props.value.name}/>)
-      }
+      r.push(<br/>);
+      if(typeof this.props.value.molecule!=="undefined" && this.props.value.molecule.length>0)      
+        r.push(<img src={this.props.value.molecule + "." + this.props.value.ext} alt={this.props.value.name}/>)
       return r;
     }
   }
@@ -100,9 +99,7 @@ class Atom extends React.Component {
       super();
       this.state = {
         hs: 0,
-        os: 0,
-        result: "",
-        molecule: ""
+        os: 0
       }
     }
     increase(that,horo) {
@@ -125,22 +122,22 @@ class Atom extends React.Component {
         if(oc>1) r.push(<sub>{oc}</sub>);
         return <code>Well done! You get a {r} molecule!</code>;
       }
-      var setResult = (result,molecule,name,url) => {
+      var setResult = (result,molecule,name,url,ext) => {
         console.log(result);
-        that.setState({hs:0, os:0, result:result, molecule:molecule,name:name,url:url});
+        that.setState({hs:0, os:0, result:result, molecule:molecule,name:name,url:url,ext:ext});
       }
       let hs = that.state.hs;
       let os = that.state.os;
       if (hs===2 && os===0){
-        setResult(success(hs,os),"H2","Hydrogen gas","https://en.wikipedia.org/wiki/Hydrogen_gas");
+        setResult(success(hs,os),"H2","Hydrogen gas","https://en.wikipedia.org/wiki/Hydrogen_gas","jpg");
       } else if (hs===0 && os===2) {
-        setResult(success(hs,os),"O2","Oxygen gas","https://en.wikipedia.org/wiki/Oxygen_gas");
+        setResult(success(hs,os),"O2","Oxygen gas","https://en.wikipedia.org/wiki/Oxygen_gas","jpg");
       } else if (hs===0 && os===3) {
-        setResult(success(hs,os),"O3","Ozone","https://en.wikipedia.org/wiki/Ozone");
+        setResult(success(hs,os),"O3","Ozone","https://en.wikipedia.org/wiki/Ozone","jpg");
       } else if (hs===2 && os===1) {
-        setResult(success(hs,os),"H2O","Water","https://en.wikipedia.org/wiki/Water");
+        setResult(success(hs,os),"H2O","Water","https://en.wikipedia.org/wiki/Water","png");
       } else if (hs===2 && os===2) {
-        setResult(success(hs,os),"H2O2","Dioxidane","https://en.wikipedia.org/wiki/Dioxidane");
+        setResult(success(hs,os),"H2O2","Dioxidane","https://en.wikipedia.org/wiki/Dioxidane","png");
       } else {
         setResult(<code>Failed! Better luck next time!</code>)
       }
