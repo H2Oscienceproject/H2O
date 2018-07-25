@@ -10,8 +10,7 @@ body {
 }
 
 .square {
-  background: #fff;
-  border: 1px solid #999;
+  background: #c5c5c5;
   font-size: 24px;
   font-weight: bold;
   line-height: 34px;
@@ -35,10 +34,10 @@ p.author {
   text-align: center;
 }
 #root {
-  background: black;
+  background: #4056d6;
 }
 .infobar {
-  background: pink;
+  background: rgb(161, 107, 5);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -58,12 +57,12 @@ p.author {
   margin: 5px;
 }
 .square img {
-  border:1px pink solid;
+  border:2px #000000 solid;
   display: inline-block;
-  width: 68px;
-  height:68px;
+  width: 66px;
+  height:66px;
 }
 .mix {
   font: 3em bold;
-  color:white;
+  color:#ffee00;
 }
