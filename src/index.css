@@ -66,3 +66,22 @@ p.author {
   font: 3em bold;
   color:#ffee00;
 }
+
+.mix a {
+  text-decoration: none;
+  padding-bottom: 1px;
+  border-bottom: 1px solid blue;
+  color: blue;
+}
+.mix a:visited {
+  color: #971313;
+  border-bottom-color: #971313;
+}
+.mix a:hover {
+  color: #eeff00;
+  border-bottom-color: #eeff00;
+}
+.mix img {
+  margin-top: 5px;
+  height:200px;
+}

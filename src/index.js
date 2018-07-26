@@ -87,9 +87,23 @@ class Atom extends React.Component {
       let os = this.props.value.os;
       r.push(<br/>);
       r.push(<a href={this.props.value.url}>{this.props.value.name}</a>);
-      if (this.props.value.molecule==="H2O"){
+      let molecule = this.props.value.molecule;
+      let name = this.props.value.name;
+      if (molecule==="H2O"){
         r.push(<br/>);
-        r.push(<img src="waterdorp.png" alt={this.props.value.name}/>)
+        r.push(<img src="h2o.png" alt={name}/>);
+      } else if (molecule==="H2O2") {
+        r.push(<br/>);
+        r.push(<img src="h2o2.png" alt={name}/>);
+      } else if (molecule==="O3") {
+        r.push(<br/>);
+        r.push(<img src="o3.jpg" alt={name}/>);
+      } else if (molecule==="O2") {
+        r.push(<br/>);
+        r.push(<img src="o2.jpg" alt={name}/>);
+      } else if (molecule==="H2") {
+        r.push(<br/>);
+        r.push(<img src="h2.jpg" alt={name}/>);
       }
       return r;
     }
@@ -136,7 +150,7 @@ class Atom extends React.Component {
       } else if (hs===0 && os===2) {
         setResult(success(hs,os),"O2","Oxygen gas","https://en.wikipedia.org/wiki/Oxygen_gas");
       } else if (hs===0 && os===3) {
-        setResult(success(hs,os),"O3","Ozone","https://en.wikipedia.org/wiki/Ozone");
+        setResult(success(hs,os),"O3","Ozone gas","https://en.wikipedia.org/wiki/Ozone");
       } else if (hs===2 && os===1) {
         setResult(success(hs,os),"H2O","Water","https://en.wikipedia.org/wiki/Water");
       } else if (hs===2 && os===2) {
