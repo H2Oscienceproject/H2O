@@ -85,3 +85,9 @@ p.author {
   margin-top: 5px;
   height:200px;
 }
+
+.achievements {
+  background-color: aqua;
+  margin:0;
+  padding:5px;
+}
